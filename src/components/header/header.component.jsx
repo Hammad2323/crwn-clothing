@@ -8,7 +8,6 @@ import {auth} from '../../firebase/firebase.utils';
 
 
 import './header.styles.scss';
-import { setCurrentUser } from '../../redux/user/user.actions';
 
 const Header =({currentUser})=>(
     <div className='header'>
@@ -20,7 +19,7 @@ const Header =({currentUser})=>(
             <Link className='option' to='/shop' >SHOP</Link>
             <Link className='option' to='/shop' >CONTACT</Link>
                              {
-                setCurrentUser ?(
+                currentUser ?(
                 <div className='option' onClick={()=> auth.signOut()}>SIGN OUT</div>
                 ):(
                 <Link className='option' to='/signin'> SIGN IN </Link>
